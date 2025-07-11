@@ -32,7 +32,7 @@ header {
 }
 
 .carousel-item {
-  width: 250px;
+  width: 200px;
   height: auto;
   flex-shrink: 0;
   transition: transform 0.3s ease;
