@@ -1,0 +1,51 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #ffffff;
+}
+
+.carousel {
+    overflow: hidden;
+    position: relative;
+    margin: 2rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-item {
+    width: 200px;
+    height: auto;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+}
+
+.carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+footer {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+}
