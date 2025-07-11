@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bake Me Happy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+</head>
+<body>
+  <header>
+    <img src="img/logo.jpg" alt="Bake Me Happy Logo">
+  </header>
+  <main>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/cupcake-lotus.png" alt="cupcake"></div>
+        <div class="swiper-slide"><img src="img/cupcake-chocolate-vegen.png" alt="cupcake"></div>
+        <div class="swiper-slide"><img src="img/cupcake-oreo.png" alt="cupcake"></div>
+        <div class="swiper-slide"><img src="img/cupcake-pistachio.png" alt="cupcake"></div>
+        <div class="swiper-slide"><img src="img/cupcake-bueno.png" alt="cupcake"></div>
+        <div class="swiper-slide"><img src="img/cupcake-banana-vegen.png" alt="cupcake"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </main>
+  <footer>
+    <a href="https://www.instagram.com/bake_me_happy555/profilecard/?igsh=cHRibzZnd2Rjejhm" target="_blank">
+      <img src="img/icon-instagram.png" alt="Instagram">
+    </a>
+    <a href="http://bit.ly/4lNk5ai" target="_blank">
+      <img src="img/icon-whatsapp.png" alt="WhatsApp">
+    </a>
+  </footer>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      centeredSlides: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+</html>
