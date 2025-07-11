@@ -77,3 +77,31 @@ footer img {
   font-size: 2.4rem;
   color: #d0846c;
 }
+.about {
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 40px auto;
+  max-width: 700px;
+  padding: 30px;
+  border-radius: 20px;
+  color: #153040; /* כחול כהה */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  direction: rtl;
+  text-align: right;
+  line-height: 1.8;
+}
+
+.about h2 {
+  margin-bottom: 20px;
+  font-size: 2.4rem;
+  color: #153040; /* התאמה לצבע הלוגו */
+}
+
+footer img {
+  width: 40px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+footer img:hover {
+  transform: scale(1.1);
+}
