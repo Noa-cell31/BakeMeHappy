@@ -30,7 +30,7 @@ main {
 }
 
 .swiper-slide img {
-  width: 280px;  /* או יותר – תוכל לשחק עם המספר */
+  width: 320px;  /* או יותר – תוכל לשחק עם המספר */
   max-width: 80vw;
   height: auto;
   border-radius: 16px;
@@ -45,8 +45,8 @@ footer {
 }
 
 footer img {
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
   transition: transform 0.2s ease;
 }
 
