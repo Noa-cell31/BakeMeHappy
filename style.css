@@ -62,13 +62,14 @@ footer {
   padding: 30px;
 }
 
-footer img {
-  width: 60px;
-  height: auto;
+/* הגדרות חדשות לגודל האייקונים של הרשתות */
+.footer-icon {
+  width: 80px;
+  height: 80px;
   transition: transform 0.3s ease;
 }
 
-footer img:hover {
+.footer-icon:hover {
   transform: scale(1.1);
 }
 
@@ -78,8 +79,9 @@ footer img:hover {
     width: 240px;
   }
 
-  footer img {
-    width: 50px;
+  .footer-icon {
+    width: 55px;
+    height: 55px;
   }
 
   .about {
