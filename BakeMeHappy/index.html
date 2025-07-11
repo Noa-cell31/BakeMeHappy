@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bake Me Happy - by Noa</title>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style-type: none;
+      text-decoration: none;
+    }
+    html {
+      font-size: 62.5%;
+      font-family: sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-size: 1.6rem;
+      background: #f3e3e0;
+      color: #6f4e37;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 4rem;
+      font-weight: 700;
+      color: #d0846c;
+    }
+    .logo img {
+      height: 60px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 5rem;
+      background-color: #fff0ea;
+    }
+    .networks {
+      text-align: center;
+      width: 100%;
+      height: 3rem;
+      padding: 1rem;
+      background-color: #fff0ea;
+    }
+    i:hover {
+      cursor: pointer;
+      transition: 1s;
+      color: #d0846c;
+    }
+    .icon-cart img {
+      width: 6rem;
+      border-radius: 50%;
+    }
+    .icon-cart img:hover {
+      transition: 1s;
+      cursor: pointer;
+      background-color: #f9d9c2;
+    }
+
+    /* Trending (Swiper) */
+    .tranding-slide .tranding-slide-img img {
+      width: 37rem;
+      height: 42rem;
+      border-radius: 2rem;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .swiper-slide-shadow-left,
+    .swiper-slide-shadow-right {
+      display: none;
+    }
+    .swiper-pagination {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/logo.png" alt="Bake Me Happy Logo">
+      Bake Me Happy - by Noa
+    </div>
+    <div class="icon-cart">
+      <img src="img/cart-icon.png" alt="Cart">
+    </div>
+  </header>
+
+  <section id="tranding" class="container">
+    <div class="swiper tranding-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="img/cupcake-lotus.png" alt="Cupcake Lotus">
+          </div>
+        </div>
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="img/cupcake-pink.png" alt="Cupcake Pink">
+          </div>
+        </div>
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="img/cupcake-blue.png" alt="Cupcake Blue">
+          </div>
+        </div>
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="img/cupcake-yellow.png" alt="Cupcake Yellow">
+          </div>
+        </div>
+        <div class="swiper-slide tranding-slide">
+          <div class="tranding-slide-img">
+            <img src="img/cupcake-red.png" alt="Cupcake Red">
+          </div>
+        </div>
+      </div>
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Navigation buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <footer class="networks">
+    <i class='bx bxl-instagram bx-lg'></i>
+    <i class='bx bxl-tiktok bx-lg'></i>
+    <i class='bx bxl-facebook bx-lg'></i>
+    <i class='bx bxl-youtube bx-lg'></i>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var TrandingsSlider = new Swiper('.tranding-slider', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      loop: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2.5,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+</html>
