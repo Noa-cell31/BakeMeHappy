@@ -1,22 +1,90 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bake Me Happy</title>
+
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #e0f2ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header img {
+      width: 150px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .swiper {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      padding-bottom: 30px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      width: 80%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    footer {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    footer img {
+      width: 40px;
+      margin: 0 10px;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <img src="img/logo.jpg" alt="Bake Me Happy Logo">
   </header>
-  <main>
-    <img src="img/cupcake-lotus.png" alt="cupcake">
-    <img src="img/cupcake-chocolate-vegen.png" alt="cupcake">
-    <img src="img/cupcake-oreo.png" alt="cupcake">
-    <img src="img/cupcake-pistachio.png" alt="cupcake">
-  </main>
+
+  <!-- Swiper -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="img/cupcake-lotus.png" alt="cupcake lotus">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/cupcake-chocolate-vegen.png" alt="cupcake chocolate vegen">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/cupcake-oreo.png" alt="cupcake oreo">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/cupcake-pistachio.png" alt="cupcake pistachio">
+      </div>
+    </div>
+    <!-- Optional pagination or arrows -->
+    <div class="swiper-pagination"></div>
+  </div>
+
   <footer>
     <a href="https://www.instagram.com/bake_me_happy555/profilecard/?igsh=cHRibzZnd2Rjejhm" target="_blank">
       <img src="img/instagram.png" alt="Instagram">
@@ -25,5 +93,21 @@
       <img src="img/whatsapp.png" alt="WhatsApp">
     </a>
   </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      slidesPerView: 1,
+      spaceBetween: 20,
+    });
+  </script>
 </body>
 </html>
