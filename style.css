@@ -13,6 +13,13 @@ header img {
   display: block;
 }
 
+/* ✨ טקסט שמתאים את עצמו לרקע */
+header h1,
+header p {
+  color: white;
+  mix-blend-mode: difference;
+}
+
 main {
   padding: 20px;
 }
