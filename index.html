@@ -12,27 +12,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>Bake Me Happy by Noa</title>
   <style>
-   body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('img/background.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #333;
-  scroll-behavior: smooth;
-}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #001a3d, #cce0f5 40%, #ffffff 80%);
+      background-attachment: fixed;
+      background-size: cover;
+      color: white;
+      scroll-behavior: smooth;
+      text-align: center;
+    }
 
     header {
       text-align: center;
       padding: 20px;
     }
+
     header img {
       width: 100px;
       margin-bottom: 10px;
     }
+
     h1 {
       margin: 0;
       font-size: 24px;
     }
+
     .intro {
       text-align: center;
       margin: 20px;
@@ -40,6 +45,7 @@
       max-width: 600px;
       margin-inline: auto;
     }
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -48,23 +54,29 @@
       max-width: 1000px;
       margin: auto;
     }
+
     .gallery div {
       text-align: center;
       animation: fadeIn 0.8s ease;
     }
+
     .gallery img {
       height: 180px;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     .gallery p {
       margin: 8px 0 0;
       font-weight: bold;
+      color: #153040; /* טקסט כהה ברקע בהיר */
     }
+
     .cta {
       text-align: center;
       margin: 30px 0;
     }
+
     .cta a {
       display: inline-block;
       background-color: #25d366;
@@ -75,23 +87,33 @@
       border-radius: 8px;
       margin-top: 10px;
     }
+
     .section {
       padding: 30px 20px;
       max-width: 700px;
       margin: auto;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      color: #153040; /* טקסט כהה על רקע בהיר */
+      line-height: 1.8;
     }
+
     .section h2 {
       font-size: 20px;
       margin-bottom: 10px;
+      color: #153040;
     }
+
     .section ul {
       padding-right: 20px;
       list-style: none;
     }
+
     .section ul li::before {
       content: "🧁 ";
       margin-left: 8px;
     }
+
     .testimonial {
       background: #f4f4f4;
       padding: 15px;
@@ -99,7 +121,9 @@
       margin: 10px 0;
       font-style: italic;
       position: relative;
+      color: #153040;
     }
+
     .testimonial::before {
       content: '"';
       font-size: 24px;
@@ -108,12 +132,14 @@
       right: 10px;
       color: #bbb;
     }
+
     .footer {
       text-align: center;
       padding: 20px;
       font-size: 14px;
-      color: #666;
+      color: #ccc;
     }
+
     #backToTop {
       position: fixed;
       bottom: 20px;
@@ -130,27 +156,33 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s ease;
     }
+
     #backToTop:hover {
       background-color: #1c4560;
     }
+
     .share-icons {
       text-align: center;
       margin-top: 20px;
     }
+
     .share-icons a {
       font-size: 24px;
       color: #153040;
       margin: 0 10px;
       text-decoration: none;
     }
+
     @media (max-width: 600px) {
       .gallery {
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
       }
+
       .gallery img {
         height: 150px;
       }
     }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -217,11 +249,11 @@
 <button id="backToTop" title="חזרה למעלה"><i class="fas fa-arrow-up"></i></button>
 
 <script>
-const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-  backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-});
-backToTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  backToTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 </script>
 
 </body>
