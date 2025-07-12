@@ -9,6 +9,7 @@
   <meta property="og:image" content="img/logo.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>Bake Me Happy by Noa</title>
   <style>
     body {
@@ -16,6 +17,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to bottom, #e8f4fc, #ffffff);
       color: #333;
+      scroll-behavior: smooth;
     }
     header {
       text-align: center;
@@ -37,15 +39,16 @@
       margin-inline: auto;
     }
     .gallery {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
       padding: 20px;
-      justify-content: center;
+      max-width: 1000px;
+      margin: auto;
     }
     .gallery div {
       text-align: center;
-      flex: 0 0 auto;
+      animation: fadeIn 0.8s ease;
     }
     .gallery img {
       height: 180px;
@@ -91,7 +94,7 @@
       position: relative;
     }
     .testimonial::before {
-      content: '"';
+      content: '\"';
       font-size: 24px;
       position: absolute;
       top: -10px;
@@ -112,10 +115,35 @@
       color: white;
       padding: 10px 15px;
       border: none;
-      border-radius: 6px;
-      font-size: 14px;
+      border-radius: 50%;
+      font-size: 18px;
       cursor: pointer;
       display: none;
+    }
+    #backToTop i {
+      margin: 0;
+    }
+    .share-icons {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .share-icons a {
+      font-size: 24px;
+      color: #153040;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      }
+      .gallery img {
+        height: 150px;
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -123,7 +151,7 @@
 <script src="nagishli/nagishli.js" defer></script>
 
 <header>
-  <img src="img/logo.jpg" alt="Bake Me Happy Logo">
+  <img src="img/logo.jpg" alt="לוגו Bake Me Happy">
   <h1>ברוכים הבאים ל-Bake Me Happy by Noa</h1>
 </header>
 
@@ -133,30 +161,12 @@
 </div>
 
 <div class="gallery">
-  <div>
-    <img src="img/cupcake-banana-vegen.png" alt="בננה טבעוני">
-    <p>בננה טבעוני</p>
-  </div>
-  <div>
-    <img src="img/cupcake-bueno.png" alt="בואנו">
-    <p>בואנו</p>
-  </div>
-  <div>
-    <img src="img/cupcake-chocolate-vegen.png" alt="שוקולד טבעוני">
-    <p>שוקולד טבעוני</p>
-  </div>
-  <div>
-    <img src="img/cupcake-lotus.png" alt="לוטוס">
-    <p>לוטוס</p>
-  </div>
-  <div>
-    <img src="img/cupcake-oreo.png" alt="אוראו">
-    <p>אוראו</p>
-  </div>
-  <div>
-    <img src="img/cupcake-pistachio.png" alt="פיסטוק">
-    <p>פיסטוק</p>
-  </div>
+  <div><img src="img/cupcake-banana-vegen.png" alt="קאפקייק בננה טבעוני"><p>בננה טבעוני</p></div>
+  <div><img src="img/cupcake-bueno.png" alt="קאפקייק בואנו"><p>בואנו</p></div>
+  <div><img src="img/cupcake-chocolate-vegen.png" alt="קאפקייק שוקולד טבעוני"><p>שוקולד טבעוני</p></div>
+  <div><img src="img/cupcake-lotus.png" alt="קאפקייק לוטוס"><p>לוטוס</p></div>
+  <div><img src="img/cupcake-oreo.png" alt="קאפקייק אוראו"><p>אוראו</p></div>
+  <div><img src="img/cupcake-pistachio.png" alt="קאפקייק פיסטוק"><p>פיסטוק</p></div>
 </div>
 
 <div class="cta">
@@ -185,11 +195,16 @@
   <p><a href="https://www.instagram.com/Bake_Me_Happy555" target="_blank">@bake_me_happy555</a></p>
 </div>
 
+<div class="share-icons">
+  <a href="https://www.instagram.com/Bake_Me_Happy555" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://wa.me/972544266681" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+
 <div class="footer">
   &copy; 2025 Bake Me Happy - by Noa | כל הזכויות שמורות
 </div>
 
-<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">חזרה למעלה</button>
+<button id="backToTop" title="חזרה למעלה"><i class="fas fa-arrow-up"></i></button>
 
 <script>
 const backToTop = document.getElementById('backToTop');
@@ -197,9 +212,7 @@ window.onscroll = () => {
   backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
 };
 backToTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    }
-  });
 </script>
+
 </body>
 </html>
