@@ -63,6 +63,17 @@ main {
   font-size: 2.4rem;
 }
 
+/* 🧁 קאפקייקים לפני ואחרי כל פריט */
+.about ul li::before {
+  content: "🧁 ";
+  margin-left: 8px;
+}
+
+.about ul li::after {
+  content: " 🧁";
+  margin-right: 8px;
+}
+
 footer {
   display: flex;
   justify-content: center;
