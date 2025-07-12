@@ -5,6 +5,10 @@ body {
   background: url('img/background.png') no-repeat center center fixed;
   background-size: cover;
   text-align: center;
+
+  /* אפקט צבע טקסט חכם */
+  mix-blend-mode: difference;
+  color: white;
 }
 
 header img {
@@ -13,11 +17,11 @@ header img {
   display: block;
 }
 
-/* ✨ טקסט שמתאים את עצמו לרקע */
+/* אין צורך כאן כי הכל כבר עובר דרך body */
 header h1,
 header p {
-  color: white;
-  mix-blend-mode: difference;
+  color: inherit;
+  mix-blend-mode: inherit;
 }
 
 main {
@@ -43,23 +47,27 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* ✨ החרגה מהאפקט לאזורים עם רקע לבן */
 .about {
   background-color: rgba(255, 255, 255, 0.85);
   margin: 40px auto;
   max-width: 700px;
   padding: 30px;
   border-radius: 20px;
-  color: #153040; /* כחול כהה */
+  color: #153040;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   text-align: center;
   direction: rtl;
   line-height: 1.8;
+
+  mix-blend-mode: normal;
 }
 
 .about h2 {
   margin-bottom: 20px;
   font-size: 2.4rem;
   color: #153040;
+  mix-blend-mode: normal;
 }
 
 footer {
@@ -67,9 +75,10 @@ footer {
   justify-content: center;
   gap: 20px;
   padding: 30px;
+
+  mix-blend-mode: difference;
 }
 
-/* הגדרות חדשות לגודל האייקונים של הרשתות */
 .footer-icon {
   width: 80px;
   height: 80px;
@@ -80,7 +89,6 @@ footer {
   transform: scale(1.1);
 }
 
-/* התאמה למובייל */
 @media (max-width: 600px) {
   .swiper-slide img {
     width: 240px;
@@ -113,8 +121,6 @@ footer {
   z-index: 999;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
-}
 
-#backToTop:hover {
-  background-color: #1c4560;
+  mix-blend-mode: normal;
 }
