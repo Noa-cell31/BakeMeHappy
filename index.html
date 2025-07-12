@@ -1,59 +1,135 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bake Me Happy</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bake Me Happy by Noa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #e8f4fc, #ffffff);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    header img {
+      width: 100px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .intro {
+      text-align: center;
+      margin: 20px;
+      font-size: 16px;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 20px;
+      justify-content: center;
+    }
+    .gallery img {
+      height: 180px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .cta {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .cta a {
+      display: inline-block;
+      background-color: #25d366;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .section {
+      padding: 30px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .section ul {
+      padding-right: 20px;
+    }
+    .testimonial {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="img/logo.jpg" alt="Bake Me Happy Logo">
-  </header>
-  <main>
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="img/cupcake-lotus.png" alt="cupcake"></div>
-        <div class="swiper-slide"><img src="img/cupcake-chocolate-vegen.png" alt="cupcake"></div>
-        <div class="swiper-slide"><img src="img/cupcake-oreo.png" alt="cupcake"></div>
-        <div class="swiper-slide"><img src="img/cupcake-pistachio.png" alt="cupcake"></div>
-        <div class="swiper-slide"><img src="img/cupcake-bueno.png" alt="cupcake"></div>
-        <div class="swiper-slide"><img src="img/cupcake-banana-vegen.png" alt="cupcake"></div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </main>
 
-  <section class="about" dir="ltr">
-    <h2>ברוכים הבאים ל־Bake Me Happy-by Noa</h2>
-    <p>
-      אני יוצרת קאפקייקס בעבודת יד, עם המון אהבה, תשומת לב לפרטים הקטנים וטעם שיגרום לכם לחייך.
-      אצלי תמצאו שילובים מיוחדים, מרקמים מדויקים ועיצובים מרהיבים שמתאימים גם לאירועים וגם לפינוק יומיומי.
-      אשמח להפוך את הרגעים שלכם לבלתי נשכחים.
-    </p>
-  </section>
+<header>
+  <img src="https://i.imgur.com/2eY0nBt.png" alt="Bake Me Happy Logo">
+  <h1>ברוכים הבאים ל-Bake Me Happy by Noa</h1>
+</header>
 
-  <footer>
-    <a href="https://www.instagram.com/bake_me_happy555/profilecard/?igsh=cHRibzZnd2Rjejhm" target="_blank">
-      <img src="img/icon-instagram.png" alt="Instagram" class="footer-icon">
-    </a>
-    <a href="http://bit.ly/4lNk5ai" target="_blank">
-      <img src="img/icon-whatsapp.png" alt="WhatsApp" class="footer-icon">
-    </a>
-  </footer>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      slidesPerView: 'auto',
-      spaceBetween: 20,
-      centeredSlides: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-  </script>
+<div class="intro">
+  אני יוצרת קאפקייקס בעבודת יד, עם המון אהבה, תשומת לב לפרטים הקטנים וטעם שיגרום לכם לחייך.
+  תמצאו אצלי שילובים ייחודיים, מרקמים מדויקים ועיצובים שמתאימים גם לאירועים וגם לפינוק יומיומי.
+</div>
+
+<div class="gallery">
+  <img src="https://i.imgur.com/qnYxqDd.jpeg" alt="Cupcake 1">
+  <img src="https://i.imgur.com/7dFKBI2.jpeg" alt="Cupcake 2">
+  <img src="https://i.imgur.com/6O7q9k5.jpeg" alt="Cupcake 3">
+</div>
+
+<div class="cta">
+  <p>רוצים להזמין קאפקייקס? אני פה בשבילכם!</p>
+  <a href="https://wa.me/972544266681" target="_blank">שלחו לי הודעה בוואטסאפ</a>
+</div>
+
+<div class="section">
+  <h2>למה לבחור בי?</h2>
+  <ul>
+    <li>קאפקייקס בעבודת יד בעיצוב אישי</li>
+    <li>שירות עם לב גדול, אדיב ומקצועי</li>
+    <li>התאמה מלאה לאירועים קטנים או גדולים</li>
+    <li>שילובי טעמים מיוחדים עם חומרי גלם איכותיים</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>מה אומרים עליי?</h2>
+  <div class="testimonial">״הקאפקייקים הכי יפים וטעימים שהזמנתי! השירות של נועה פשוט חלום.״ - רוני</div>
+  <div class="testimonial">״כל האורחים באירוע שאלו מאיפה הקאפקייקים. נועה תודה!״ - מעיין</div>
+</div>
+
+<div class="section">
+  <h2>עקבו אחרי באינסטגרם</h2>
+  <p><a href="https://www.instagram.com/bake_me_happy_by_noa" target="_blank">@bake_me_happy_by_noa</a></p>
+</div>
+
+<div class="footer">
+  &copy; 2025 Bake Me Happy by Noa | כל הזכויות שמורות
+</div>
+
 </body>
 </html>
