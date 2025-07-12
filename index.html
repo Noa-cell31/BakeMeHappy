@@ -186,18 +186,18 @@
 </div>
 
 <div class="footer">
-  &copy; 2025 Bake Me Happy by Noa | כל הזכויות שמורות
+  &copy; 2025 Bake Me Happy - by Noa | כל הזכויות שמורות
 </div>
 
 <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">חזרה למעלה</button>
 
 <script>
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTop.style.display = 'block';
-    } else {
-      backToTop.style.display = 'none';
+const backToTop = document.getElementById('backToTop');
+window.onscroll = () => {
+  backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+};
+backToTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
     }
   });
 </script>
