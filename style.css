@@ -2,26 +2,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('img/background.png') no-repeat center center fixed;
+  background: linear-gradient(to bottom, #001a3d, #cce0f5 40%, #ffffff 80%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-size: cover;
-  text-align: center;
-
-  /* אפקט צבע טקסט חכם */
-  mix-blend-mode: difference;
   color: white;
+  text-align: center;
 }
 
 header img {
   width: 200px;
   margin: 20px auto;
   display: block;
-}
-
-/* אין צורך כאן כי הכל כבר עובר דרך body */
-header h1,
-header p {
-  color: inherit;
-  mix-blend-mode: inherit;
 }
 
 main {
@@ -47,27 +39,28 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* ✨ החרגה מהאפקט לאזורים עם רקע לבן */
+/* 🧁 החזרת צבע כהה במקומות עם רקע בהיר */
+.about,
+.about h2,
+.gallery p {
+  color: #153040;
+}
+
 .about {
   background-color: rgba(255, 255, 255, 0.85);
   margin: 40px auto;
   max-width: 700px;
   padding: 30px;
   border-radius: 20px;
-  color: #153040;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   text-align: center;
   direction: rtl;
   line-height: 1.8;
-
-  mix-blend-mode: normal;
 }
 
 .about h2 {
   margin-bottom: 20px;
   font-size: 2.4rem;
-  color: #153040;
-  mix-blend-mode: normal;
 }
 
 footer {
@@ -75,8 +68,6 @@ footer {
   justify-content: center;
   gap: 20px;
   padding: 30px;
-
-  mix-blend-mode: difference;
 }
 
 .footer-icon {
@@ -121,6 +112,8 @@ footer {
   z-index: 999;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
+}
 
-  mix-blend-mode: normal;
+#backToTop:hover {
+  background-color: #1c4560;
 }
