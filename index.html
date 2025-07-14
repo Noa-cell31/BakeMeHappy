@@ -53,15 +53,17 @@
       flex-direction: column;
       align-items: center;
       transform: scale(0.8);
-      opacity: 0.5;
+      opacity: 0.4;
       transition: transform 0.3s ease, opacity 0.3s ease;
+      filter: blur(2px);
     }
     .swiper-slide-active {
-      transform: scale(1);
+      transform: scale(1.2);
       opacity: 1;
+      filter: none;
     }
     .swiper-slide img {
-      height: 180px;
+      height: 250px;
       border-radius: 0;
       box-shadow: none;
     }
