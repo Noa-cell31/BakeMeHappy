@@ -44,21 +44,28 @@
     .swiper {
       width: 90%;
       max-width: 1000px;
-      margin: 30px auto;
+      margin: 30px auto 60px;
       padding-bottom: 40px;
     }
     .swiper-slide {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      padding: 10px;
+      background: none;
       display: flex;
       flex-direction: column;
       align-items: center;
+      transform: scale(0.8);
+      opacity: 0.4;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      filter: blur(2px);
+    }
+    .swiper-slide-active {
+      transform: scale(1.2);
+      opacity: 1;
+      filter: none;
     }
     .swiper-slide img {
-      height: 180px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      height: 250px;
+      border-radius: 0;
+      box-shadow: none;
     }
     .swiper-slide p {
       margin-top: 10px;
@@ -87,7 +94,7 @@
     .section {
       padding: 30px 20px;
       max-width: 700px;
-      margin: auto;
+      margin: 40px auto;
       background: rgba(255, 255, 255, 0.85);
       border-radius: 20px;
       color: #153040;
@@ -103,11 +110,11 @@
       list-style: none;
     }
     .section ul li::before {
-      content: "\1F9C1 "; /* 🧁 */
+      content: "🧁 ";
       margin-left: 8px;
     }
     .section ul li::after {
-      content: " \1F9C1"; /* 🧁 */
+      content: " 🧁";
       margin-right: 8px;
     }
     .testimonial {
@@ -161,6 +168,13 @@
     #backToTop:hover {
       background-color: #1c4560;
     }
+    .instagram-embed {
+      margin-top: 20px;
+    }
+    iframe {
+      width: 100%;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -212,7 +226,9 @@
 
 <div class="section">
   <h2>עקבו אחרי באינסטגרם</h2>
-  <p><a href="https://www.instagram.com/Bake_Me_Happy555" target="_blank">@bake_me_happy555</a></p>
+  <div class="instagram-embed">
+    <iframe src="https://www.instagram.com/Bake_Me_Happy555/embed" height="450" scrolling="no" allowtransparency="true"></iframe>
+  </div>
 </div>
 
 <div class="share-icons">
@@ -237,6 +253,16 @@
   const swiper = new Swiper('.swiper', {
     loop: true,
     spaceBetween: 30,
+    grabCursor: true,
+    centeredSlides: true,
+    effect: 'coverflow',
+    coverflowEffect: {
+      rotate: 30,
+      stretch: 0,
+      depth: 200,
+      modifier: 1,
+      slideShadows: false,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
