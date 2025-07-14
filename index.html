@@ -1,17 +1,16 @@
-<!-- הוספת swiper לקרוסלת תמונות -->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="קאפקייקס בעבודת יד מבית Bake Me Happy by Noa. שילובים ייחודיים, עיצוב מוקפד וטעם בלתי נשכח.">
+  <meta property="og:title" content="Bake Me Happy by Noa">
+  <meta property="og:description" content="קאפקייקים בעבודת יד לאירועים ולפינוקים יומיומיים">
+  <meta property="og:image" content="img/logo.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>Bake Me Happy by Noa</title>
-
-  <!-- Swiper CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-  />
-
   <style>
     body {
       margin: 0;
@@ -20,111 +19,247 @@
       background-attachment: fixed;
       background-size: cover;
       color: white;
+      scroll-behavior: smooth;
       text-align: center;
     }
 
-    .swiper {
-      width: 90%;
-      max-width: 800px;
-      height: auto;
-      margin: 40px auto;
-      padding-bottom: 40px;
+    header {
+      text-align: center;
+      padding: 20px;
     }
 
-    .swiper-slide {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    header img {
+      width: 100px;
+      margin-bottom: 10px;
     }
 
-    .swiper-slide img {
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 20px;
+      font-size: 16px;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gallery div {
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .gallery img {
       height: 180px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .swiper-slide p {
-      margin-top: 10px;
-      color: #153040;
+    .gallery p {
+      margin: 8px 0 0;
       font-weight: bold;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
       color: #153040;
     }
 
-    .swiper-pagination-bullet-active {
+    .cta {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .cta a {
+      display: inline-block;
+      background-color: #25d366;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .section {
+      padding: 30px 20px;
+      max-width: 700px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      color: #153040;
+      line-height: 1.8;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #153040;
+    }
+
+    .section ul {
+      padding-right: 20px;
+      list-style: none;
+    }
+
+    .section ul li::before {
+      content: "🧁 ";
+      margin-left: 8px;
+    }
+
+    .section ul li::after {
+      content: " 🧁";
+      margin-right: 8px;
+    }
+
+    .testimonial {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      font-style: italic;
+      position: relative;
+      color: #153040;
+    }
+
+    .testimonial::before {
+      content: '"';
+      font-size: 24px;
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      color: #bbb;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
       background: #153040;
+      color: white;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    #backToTop:hover {
+      background-color: #1c4560;
+    }
+
+    .share-icons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .share-icons a {
+      font-size: 24px;
+      color: #153040;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      }
+
+      .gallery img {
+        height: 150px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
+<script src="nagishli/nagishli.js" defer></script>
 
-<h2>הטעמים שלנו</h2>
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <img src="img/cupcake-banana-vegen.png" alt="בננה טבעוני" />
-      <p>בננה טבעוני</p>
-    </div>
-    <div class="swiper-slide">
-      <img src="img/cupcake-bueno.png" alt="בואנו" />
-      <p>בואנו</p>
-    </div>
-    <div class="swiper-slide">
-      <img src="img/cupcake-chocolate-vegen.png" alt="שוקולד טבעוני" />
-      <p>שוקולד טבעוני</p>
-    </div>
-    <div class="swiper-slide">
-      <img src="img/cupcake-lotus.png" alt="לוטוס" />
-      <p>לוטוס</p>
-    </div>
-    <div class="swiper-slide">
-      <img src="img/cupcake-oreo.png" alt="אוראו" />
-      <p>אוראו</p>
-    </div>
-    <div class="swiper-slide">
-      <img src="img/cupcake-pistachio.png" alt="פיסטוק" />
-      <p>פיסטוק</p>
-    </div>
-  </div>
-  <!-- כפתורי ניווט -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-  <!-- נקודות עמודים -->
-  <div class="swiper-pagination"></div>
+<header>
+  <img src="img/logo.jpg" alt="לוגו Bake Me Happy">
+  <h1>ברוכים הבאים ל-Bake Me Happy by Noa</h1>
+</header>
+
+<div class="intro">
+  אני יוצרת קאפקייקס בעבודת יד, עם המון אהבה, תשומת לב לפרטים הקטנים וטעם שיגרום לכם לחייך.
+  תמצאו אצלי שילובים ייחודיים, מרקמים מדויקים ועיצובים שמתאימים גם לאירועים וגם לפינוק יומיומי.
 </div>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<div class="gallery">
+  <div><img src="img/cupcake-banana-vegen.png" alt="קאפקייק בננה טבעוני"><p>בננה טבעוני</p></div>
+  <div><img src="img/cupcake-bueno.png" alt="קאפקייק בואנו"><p>בואנו</p></div>
+  <div><img src="img/cupcake-chocolate-vegen.png" alt="קאפקייק שוקולד טבעוני"><p>שוקולד טבעוני</p></div>
+  <div><img src="img/cupcake-lotus.png" alt="קאפקייק לוטוס"><p>לוטוס</p></div>
+  <div><img src="img/cupcake-oreo.png" alt="קאפקייק אוראו"><p>אוראו</p></div>
+  <div><img src="img/cupcake-pistachio.png" alt="קאפקייק פיסטוק"><p>פיסטוק</p></div>
+</div>
+
+<div class="cta">
+  <p>רוצים להזמין קאפקייקס? אני פה בשבילכם!</p>
+  <a href="https://wa.me/972544266681" target="_blank">שלחו לי הודעה בוואטסאפ</a>
+</div>
+
+<div class="section">
+  <h2>למה לבחור בי?</h2>
+  <ul>
+    <li>קאפקייקס בעבודת יד בעיצוב אישי</li>
+    <li>שירות עם לב גדול, אדיב ומקצועי</li>
+    <li>התאמה מלאה לאירועים קטנים או גדולים</li>
+    <li>שילובי טעמים מיוחדים עם חומרי גלם איכותיים</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>מה אומרים עליי?</h2>
+  <div class="testimonial">הקאפקייקים הכי יפים וטעימים שהזמנתי! השירות של נועה פשוט חלום. - רוני</div>
+  <div class="testimonial">כל האורחים באירוע שאלו מאיפה הקאפקייקים. נועה תודה! - מעיין</div>
+</div>
+
+<div class="section">
+  <h2>עקבו אחרי באינסטגרם</h2>
+  <p><a href="https://www.instagram.com/Bake_Me_Happy555" target="_blank">@bake_me_happy555</a></p>
+</div>
+
+<div class="share-icons">
+  <a href="https://www.instagram.com/Bake_Me_Happy555" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="http://bit.ly/4lNk5ai" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<div class="footer">
+  &copy; 2025 Bake Me Happy - by Noa | כל הזכויות שמורות
+</div>
+
+<button id="backToTop" title="חזרה למעלה"><i class="fas fa-arrow-up"></i></button>
+
 <script>
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1.2,
-      },
-      480: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-    },
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
   });
+  backToTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 </script>
+
 </body>
 </html>
