@@ -10,6 +10,7 @@
   <meta property="og:type" content="website">
   <link rel="icon" href="img/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <title>Bake Me Happy by Noa</title>
   <style>
     body {
@@ -22,61 +23,58 @@
       scroll-behavior: smooth;
       text-align: center;
     }
-
     header {
       text-align: center;
       padding: 20px;
     }
-
     header img {
       width: 100px;
       margin-bottom: 10px;
     }
-
     h1 {
       margin: 0;
       font-size: 24px;
     }
-
     .intro {
-      text-align: center;
       margin: 20px;
       font-size: 16px;
       max-width: 600px;
       margin-inline: auto;
     }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      padding: 20px;
+    .swiper {
+      width: 90%;
       max-width: 1000px;
-      margin: auto;
+      margin: 30px auto;
+      padding-bottom: 40px;
     }
-
-    .gallery div {
-      text-align: center;
-      animation: fadeIn 0.8s ease;
+    .swiper-slide {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-
-    .gallery img {
+    .swiper-slide img {
       height: 180px;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
-    .gallery p {
-      margin: 8px 0 0;
+    .swiper-slide p {
+      margin-top: 10px;
+      color: #153040;
       font-weight: bold;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
       color: #153040;
     }
-
+    .swiper-pagination-bullet-active {
+      background: #153040;
+    }
     .cta {
-      text-align: center;
       margin: 30px 0;
     }
-
     .cta a {
       display: inline-block;
       background-color: #25d366;
@@ -85,9 +83,7 @@
       font-size: 18px;
       text-decoration: none;
       border-radius: 8px;
-      margin-top: 10px;
     }
-
     .section {
       padding: 30px 20px;
       max-width: 700px;
@@ -97,38 +93,14 @@
       color: #153040;
       line-height: 1.8;
     }
-
-    .section h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: #153040;
-    }
-
-    .section ul {
-      padding-right: 20px;
-      list-style: none;
-    }
-
-    .section ul li::before {
-      content: "🧁 ";
-      margin-left: 8px;
-    }
-
-    .section ul li::after {
-      content: " 🧁";
-      margin-right: 8px;
-    }
-
     .testimonial {
       background: #f4f4f4;
       padding: 15px;
       border-radius: 10px;
       margin: 10px 0;
       font-style: italic;
-      position: relative;
       color: #153040;
     }
-
     .testimonial::before {
       content: '"';
       font-size: 24px;
@@ -137,14 +109,12 @@
       right: 10px;
       color: #bbb;
     }
-
     .footer {
       text-align: center;
       padding: 20px;
       font-size: 14px;
       color: #ccc;
     }
-
     #backToTop {
       position: fixed;
       bottom: 20px;
@@ -161,36 +131,8 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s ease;
     }
-
     #backToTop:hover {
       background-color: #1c4560;
-    }
-
-    .share-icons {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .share-icons a {
-      font-size: 24px;
-      color: #153040;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      }
-
-      .gallery img {
-        height: 150px;
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -203,17 +145,21 @@
 </header>
 
 <div class="intro">
-  אני יוצרת קאפקייקס בעבודת יד, עם המון אהבה, תשומת לב לפרטים הקטנים וטעם שיגרום לכם לחייך.
-  תמצאו אצלי שילובים ייחודיים, מרקמים מדויקים ועיצובים שמתאימים גם לאירועים וגם לפינוק יומיומי.
+  אני יוצרת קאפקייקס בעבודת יד, עם המון אהבה, תשומת לב לפרטים הקטנים וטעם שיגרום לכם לחייך. תמצאו אצלי שילובים ייחודיים, מרקמים מדויקים ועיצובים שמתאימים גם לאירועים וגם לפינוק יומיומי.
 </div>
 
-<div class="gallery">
-  <div><img src="img/cupcake-banana-vegen.png" alt="קאפקייק בננה טבעוני"><p>בננה טבעוני</p></div>
-  <div><img src="img/cupcake-bueno.png" alt="קאפקייק בואנו"><p>בואנו</p></div>
-  <div><img src="img/cupcake-chocolate-vegen.png" alt="קאפקייק שוקולד טבעוני"><p>שוקולד טבעוני</p></div>
-  <div><img src="img/cupcake-lotus.png" alt="קאפקייק לוטוס"><p>לוטוס</p></div>
-  <div><img src="img/cupcake-oreo.png" alt="קאפקייק אוראו"><p>אוראו</p></div>
-  <div><img src="img/cupcake-pistachio.png" alt="קאפקייק פיסטוק"><p>פיסטוק</p></div>
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="img/cupcake-banana-vegen.png" alt="קאפקייק בננה טבעוני"><p>בננה טבעוני</p></div>
+    <div class="swiper-slide"><img src="img/cupcake-bueno.png" alt="קאפקייק בואנו"><p>בואנו</p></div>
+    <div class="swiper-slide"><img src="img/cupcake-chocolate-vegen.png" alt="קאפקייק שוקולד טבעוני"><p>שוקולד טבעוני</p></div>
+    <div class="swiper-slide"><img src="img/cupcake-lotus.png" alt="קאפקייק לוטוס"><p>לוטוס</p></div>
+    <div class="swiper-slide"><img src="img/cupcake-oreo.png" alt="קאפקייק אוראו"><p>אוראו</p></div>
+    <div class="swiper-slide"><img src="img/cupcake-pistachio.png" alt="קאפקייק פיסטוק"><p>פיסטוק</p></div>
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
 </div>
 
 <div class="cta">
@@ -253,12 +199,37 @@
 
 <button id="backToTop" title="חזרה למעלה"><i class="fas fa-arrow-up"></i></button>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   const backToTop = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
     backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
   });
   backToTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.2,
+      },
+      480: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+    },
+  });
 </script>
 
 </body>
