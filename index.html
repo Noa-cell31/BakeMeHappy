@@ -23,42 +23,118 @@
       scroll-behavior: smooth;
       text-align: center;
     }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    header {
+      text-align: center;
+      padding: 20px;
     }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    #loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    #loader img {
+    header img {
       width: 100px;
-      animation: spin 1.5s linear infinite;
+      margin-bottom: 10px;
     }
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .intro {
+      margin: 20px;
+      font-size: 16px;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+    .swiper {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding-bottom: 40px;
+    }
+    .swiper-slide {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .swiper-slide img {
+      height: 180px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .swiper-slide p {
+      margin-top: 10px;
+      color: #153040;
+      font-weight: bold;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #153040;
+    }
+    .swiper-pagination-bullet-active {
+      background: #153040;
+    }
+    .cta {
+      margin: 30px 0;
+    }
+    .cta a {
+      display: inline-block;
+      background-color: #25d366;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .section {
+      padding: 30px 20px;
+      max-width: 700px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      color: #153040;
+      line-height: 1.8;
+    }
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #153040;
+    }
+    .section ul {
+      padding-right: 20px;
+      list-style: none;
     }
     .section ul li::before {
-      content: "🧁 ";
+      content: "\1F9C1 "; /* 🧁 */
       margin-left: 8px;
     }
     .section ul li::after {
-      content: " 🧁";
+      content: " \1F9C1"; /* 🧁 */
       margin-right: 8px;
+    }
+    .testimonial {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      font-style: italic;
+      color: #153040;
+    }
+    .testimonial::before {
+      content: '"';
+      font-size: 24px;
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      color: #bbb;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+    .share-icons {
+      text-align: center;
+      margin-top: 20px;
     }
     .share-icons a {
       font-size: 24px;
@@ -66,27 +142,122 @@
       margin: 0 10px;
       text-decoration: none;
     }
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #153040;
+      color: white;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+    #backToTop:hover {
+      background-color: #1c4560;
+    }
   </style>
 </head>
 <body>
-<div id="loader">
-  <img src="img/logo.jpg" alt="טוען...">
-</div>
-<script>
-  window.addEventListener("load", () => {
-    document.getElementById("loader").style.display = "none";
-    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
-  });
-</script>
 <script src="nagishli/nagishli.js" defer></script>
-<header class="fade-in">
+
+<header>
   <img src="img/logo.jpg" alt="לוגו Bake Me Happy">
   <h1>ברוכים הבאים ל-Bake Me Happy by Noa</h1>
 </header>
-<div class="intro fade-in">
+
+<div class="intro">
   אני יוצרת קאפקייקס בעבודת יד, עם המון אהבה, תשומת לב לפרטים הקטנים וטעם שיגרום לכם לחייך. תמצאו אצלי שילובים ייחודיים, מרקמים מדויקים ועיצובים שמתאימים גם לאירועים וגם לפינוק יומיומי.
 </div>
-<!-- שאר התוכן משוחזר כאן כפי שהיה קודם כולל הקרוסלה והאלמנטים שהוספנו -->
-<!-- נא להמשיך עם שיחזור החלקים הקודמים כמו הקרוסלה, תיבות עם רווחים, הצגת אינסטגרם וכו' -->
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="img/cupcake-banana-vegen.png" alt="קאפקייק בננה טבעוני"><p>בננה טבעוני</p></div>
+    <div class="swiper-slide"><img src="img/cupcake-bueno.png" alt="קאפקייק בואנו"><p>בואנו</p></div>
+    <div class="swiper-slide"><img src="img/cupcake-chocolate-vegen.png" alt="קאפקייק שוקולד טבעוני"><p>שוקולד טבעוני</p></div>
+    <div class="swiper-slide"><img src="img/cupcake-lotus.png" alt="קאפקייק לוטוס"><p>לוטוס</p></div>
+    <div class="swiper-slide"><img src="img/cupcake-oreo.png" alt="קאפקייק אוראו"><p>אוראו</p></div>
+    <div class="swiper-slide"><img src="img/cupcake-pistachio.png" alt="קאפקייק פיסטוק"><p>פיסטוק</p></div>
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<div class="cta">
+  <p>רוצים להזמין קאפקייקס? אני פה בשבילכם!</p>
+  <a href="https://wa.me/972544266681" target="_blank">שלחו לי הודעה בוואטסאפ</a>
+</div>
+
+<div class="section">
+  <h2>למה לבחור בי?</h2>
+  <ul>
+    <li>קאפקייקס בעבודת יד בעיצוב אישי</li>
+    <li>שירות עם לב גדול, אדיב ומקצועי</li>
+    <li>התאמה מלאה לאירועים קטנים או גדולים</li>
+    <li>שילובי טעמים מיוחדים עם חומרי גלם איכותיים</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>מה אומרים עליי?</h2>
+  <div class="testimonial">הקאפקייקים הכי יפים וטעימים שהזמנתי! השירות של נועה פשוט חלום. - רוני</div>
+  <div class="testimonial">כל האורחים באירוע שאלו מאיפה הקאפקייקים. נועה תודה! - מעיין</div>
+</div>
+
+<div class="section">
+  <h2>עקבו אחרי באינסטגרם</h2>
+  <p><a href="https://www.instagram.com/Bake_Me_Happy555" target="_blank">@bake_me_happy555</a></p>
+</div>
+
+<div class="share-icons">
+  <a href="https://www.instagram.com/Bake_Me_Happy555" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="http://bit.ly/4lNk5ai" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<div class="footer">
+  &copy; 2025 Bake Me Happy - by Noa | כל הזכויות שמורות
+</div>
+
+<button id="backToTop" title="חזרה למעלה"><i class="fas fa-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  backToTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.2,
+      },
+      480: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
+
 </body>
 </html>
