@@ -48,12 +48,17 @@
       padding-bottom: 40px;
     }
     .swiper-slide {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      padding: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+    .swiper-slide:hover {
+      transform: scale(1.03);
     }
     .swiper-slide img {
       height: 180px;
@@ -246,6 +251,16 @@
   const swiper = new Swiper('.swiper', {
     loop: true,
     spaceBetween: 30,
+    grabCursor: true,
+    centeredSlides: true,
+    effect: 'coverflow',
+    coverflowEffect: {
+      rotate: 30,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
