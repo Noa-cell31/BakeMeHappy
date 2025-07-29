@@ -11,9 +11,16 @@ body {
 }
 
 header img {
-  width: 400px;
-  margin: 400px auto;
+  width: 500px; /* הגדל את הלוגו – אפשר גם 550 אם תרצה */
+  max-width: 90vw; /* תגובה למסכים קטנים */
+  margin: 60px auto 40px; /* מרווח עליון קטן יותר, תחתון סביר */
   display: block;
+  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.2)); /* הצללה להבלטה */
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.03); /* אפקט ריחוף עדין */
 }
 
 main {
