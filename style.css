@@ -10,17 +10,23 @@ body {
   text-align: center;
 }
 
-header img {
-  width: 500px; /* גודל הלוגו */
-  max-width: 90vw; /* תמיכה במסכים קטנים */
-  margin: 60px auto 40px; /* מרווח סביר מהחלק העליון והתחתון */
-  display: block;
-  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.2)); /* הצללה להבלטה */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 0 40px;
+}
+
+.logo-container img {
+  width: 320px; /* תוכל להגדיל ל־350 או יותר אם תרצה */
+  max-width: 90vw;
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
 }
 
-header img:hover {
-  transform: scale(1.03); /* הגדלה עדינה בריחוף */
+.logo-container img:hover {
+  transform: scale(1.03);
 }
 
 main {
