@@ -18,9 +18,9 @@ body {
 }
 
 .logo-container img {
-  width: 320px; /* תוכל להגדיל ל־350 או יותר אם תרצה */
+  width: 350px; /* תוכל להגדיל ל־350 או יותר אם תרצה */
   max-width: 90vw;
-  height: auto;
+  height: 350px;
   filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
 }
