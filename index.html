@@ -22,7 +22,28 @@
       color: white;
       scroll-behavior: smooth;
       text-align: center;
+      padding-top: 80px;
     }
+
+    .sticky-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .sticky-header img {
+      height: 60px;
+      width: auto;
+    }
+
     header {
       text-align: center;
       padding: 20px;
@@ -171,106 +192,6 @@
 </head>
 <body>
 <script src="nagishli/nagishli.js" defer></script>
-
 <header class="sticky-header">
   <img src="img/logo.jpg" alt="לוגו האתר">
 </header>
-
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="img/cupcake-banana-vegen.png" alt="קאפקייק בננה טבעוני"><p style="color: #FFFFFF;">בננה טבעוני</p></div>
-    <div class="swiper-slide"><img src="img/cupcake-bueno.png" alt="קאפקייק בואנו"><p style="color: #FFFFFF;">בואנו</p></div>
-    <div class="swiper-slide"><img src="img/cupcake-chocolate-vegen.png" alt="קאפקייק שוקולד טבעוני"><p style="color: #FFFFFF;">שוקולד טבעוני</p></div>
-    <div class="swiper-slide"><img src="img/cupcake-lotus.png" alt="קאפקייק לוטוס"><p style="color: #FFFFFF;">לוטוס</p></div>
-    <div class="swiper-slide"><img src="img/cupcake-oreo.png" alt="קאפקייק אוראו"><p style="color: #FFFFFF;">אוראו</p></div>
-    <div class="swiper-slide"><img src="img/cupcake-pistachio.png" alt="קאפקייק פיסטוק"><p style="color: #FFFFFF;">פיסטוק</p></div>
-  </div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-pagination"></div>
-</div>
-
-<div class="cta">
-  <p>רוצים להזמין קאפקייקס? אני פה בשבילכם!</p>
-  <a href="https://wa.me/972544266681" target="_blank">שלחו לי הודעה בוואטסאפ</a>
-</div>
-
-<div class="section">
-  <h2>למה לבחור בי?</h2>
-  <ul>
-    <li>קאפקייקס בעבודת יד בעיצוב אישי</li>
-    <li>שירות עם לב גדול, אדיב ומקצועי</li>
-    <li>התאמה מלאה לאירועים קטנים או גדולים</li>
-    <li>שילובי טעמים מיוחדים עם חומרי גלם איכותיים</li>
-  </ul>
-</div>
-
-<div class="section">
-  <h2>לקוחות ממליצים</h2>
-  <div class="testimonial">הקאפקייקים הכי יפים וטעימים שהזמנתי! השירות של נועה פשוט חלום. - רוני</div>
-  <div class="testimonial">כל האורחים באירוע שאלו מאיפה הקאפקייקים. נועה תודה! - מעיין</div>
-</div>
-
-<div class="section">
-  <h2>עקבו אחרי באינסטגרם</h2>
-  <div class="instagram-embed">
-    <iframe src="https://www.instagram.com/Bake_Me_Happy555/embed" height="450" scrolling="no" allowtransparency="true"></iframe>
-  </div>
-</div>
-
-<div class="share-icons">
-  <a href="https://www.instagram.com/Bake_Me_Happy555" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="http://bit.ly/4lNk5ai" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-</div>
-
-<div class="footer">
-  &copy; 2025 Bake Me Happy - by Noa | כל הזכויות שמורות
-</div>
-
-<button id="backToTop" title="חזרה למעלה"><i class="fas fa-arrow-up"></i></button>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-  });
-  backToTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    spaceBetween: 30,
-    grabCursor: true,
-    centeredSlides: true,
-    effect: 'coverflow',
-    coverflowEffect: {
-      rotate: 30,
-      stretch: 0,
-      depth: 200,
-      modifier: 1,
-      slideShadows: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1.2,
-      },
-      480: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-    },
-  });
-</script>
-
-</body>
-</html>
