@@ -10,6 +10,41 @@ body {
   text-align: center;
 }
 
+/* 🔵 סרגל עליון */
+.top-bar {
+  background-color: #011638;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar .logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.top-bar .logo {
+  width: 30px;
+  margin-bottom: 5px;
+}
+
+.top-bar .brand-text .line1,
+.top-bar .brand-text .line2 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.top-bar .brand-text .line3 {
+  font-size: 12px;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+/* 🧁 לוגו רגיל */
 .logo-container {
   display: flex;
   justify-content: center;
@@ -18,7 +53,7 @@ body {
 }
 
 .logo-container img {
-  width: 350px; /* תוכל להגדיל ל־350 או יותר אם תרצה */
+  width: 350px;
   max-width: 90vw;
   height: 350px;
   filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.2));
@@ -76,7 +111,6 @@ main {
   font-size: 2.4rem;
 }
 
-/* 🧁 קאפקייקים לפני ואחרי כל פריט */
 .about ul li::before {
   content: "🧁 ";
   margin-left: 8px;
